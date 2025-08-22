@@ -2,6 +2,48 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    style.
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        margin: 0;
+        background: #ffffff;
+        color: #111;
+      }
+      .navbar {
+        background: #003366; /* Dark navy blue */
+        padding: 14px 30px;
+        text-align: left;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      }
+      .navbar a {
+        text-decoration: none;
+        color: white;
+        font-weight: 600;
+        margin-right: 25px;
+        transition: color 0.3s;
+      }
+      .navbar a:hover {
+        color: #00aaff;
+      }
+      .container {
+        max-width: 900px;
+        margin: 40px;
+        text-align: left;
+      }
+      h1 {
+        color: #003366;
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 1rem;
+        color: #333;
+      }
   body
-    block content
+    .navbar
+      a(href='/') Home
+      a(href='/budget') Budget
+      a(href='/expenses') Expenses
+      a(href='/login') Login
+
+    .container
+      block content

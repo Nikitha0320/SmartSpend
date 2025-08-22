@@ -1,18 +1,10 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const ctrlMain = require('../controllers/main');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'home page' });
-});
-router.get('/budget', function(req, res, next) {
-  res.render('index', { title: 'budget page' });
-});
-router.get('/expenses', function(req, res, next) {
-  res.render('index', { title: 'expenses page' });
-});
-router.get('/login', function(req, res, next) {
-  res.render('index', { title: 'login page' });
-});
+router.get('/', ctrlMain.home);
+router.get('/expenses', ctrlMain.expenses);
+router.get('/budget', ctrlMain.budget);
+router.get('/login', ctrlMain.login);
 
 module.exports = router;
